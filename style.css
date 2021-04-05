@@ -1,0 +1,111 @@
+:root {
+  --size: 25;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+/********/
+/* dots */
+/********/
+
+ul.dots {
+  margin-top: 6vmin;
+  width: calc(var(--size) * 4vmin);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+ul.dots > li > input {
+  position: relative;
+  left: -1000px;
+  width: 0;
+  height: 0;
+}
+
+ul.dots > li > label {
+  display: inline-block;
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+ul.dots > li > input + label  {
+  background: #a8a8a8;
+  transition: background 0.2s ease;
+}
+
+ul.dots > li > label:hover,
+ul.dots > li > input:checked + label {
+  background: #696969;
+}
+
+ul.dots > li > span.slide {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: calc(var(--size) * 4vmin);
+  height: calc(var(--size) * 3vmin);
+  color: #fff;
+  background-size: cover;
+  margin-top: 3vmin;
+}
+
+ul.dots > li > input ~ span.slide {
+  left: -1000px; 
+  opacity: 0.5;
+}
+
+ul.dots > li > input:checked ~ span.slide {
+  left: calc(50vw - var(--size) * 2vmin);
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+ul.dots > li:nth-child(1) > span.slide {
+  background-image: url("https://source.unsplash.com/random/1");
+}
+
+ul.dots > li:nth-child(2) > span.slide {
+  background-image: url("https://source.unsplash.com/random/2");
+}
+
+ul.dots > li:nth-child(3) > span.slide {
+  background-image: url("https://source.unsplash.com/random/3");
+}
+
+ul.dots > li:nth-child(4) > span.slide {
+  background-image: url("https://source.unsplash.com/random/4");
+}
+
+ul.dots > li:nth-child(5) > span.slide {
+  background-image: url("https://source.unsplash.com/random/5");
+}

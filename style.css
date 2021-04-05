@@ -15,14 +15,14 @@ main {
   flex-direction: column;
 }
 
+/********/
+/* dots */
+/********/
+
 ul, li {
   padding: 0;
   margin: 0;
 }
-
-/********/
-/* dots */
-/********/
 
 ul.dots {
   margin-top: 6vmin;
@@ -32,6 +32,10 @@ ul.dots {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  opacity: 0;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 ul.dots > li > input {
@@ -39,14 +43,21 @@ ul.dots > li > input {
   left: -1000px;
   width: 0;
   height: 0;
+  display: none;
 }
 
 ul.dots > li > label {
   display: inline-block;
   width: 3vmin;
   height: 3vmin;
+  min-width: 10px;
+  min-height: 10px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+ul.dots > li:not(:last-child) > label {
+  margin-right: 1.5vmin;
 }
 
 ul.dots > li > input + label  {
@@ -68,11 +79,8 @@ ul.dots > li > span.slide {
   width: calc(var(--size) * 4vmin);
   height: calc(var(--size) * 3vmin);
   background-size: cover;
-  margin-top: 3vmin;
+  margin: 3vmin;
   box-shadow: 0 4vmin 4vmin -2vmin #00000066;
-}
-
-ul.dots > li > input ~ span.slide {
   left: -1000px; 
   opacity: 0.5;
 }

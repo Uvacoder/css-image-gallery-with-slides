@@ -85,20 +85,22 @@ ul.gallery > li > span.slide {
   background-size: cover;
   margin: 3vmin;
   box-shadow: 0 4vmin 4vmin -2vmin #00000066;
-  left: -1000px; 
-  opacity: 0.5;
+  left: -1000px;
+  opacity: 0;
+  top: 12vmin;
 }
 
 ul.gallery > li > input:checked ~ span.slide {
-  left: calc(50vw - 3vmin - var(--size) * 2vmin);
   animation-name: fade-in;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  left: calc(50vw - 3vmin - var(--size) * 2vmin);
 }
 
 @keyframes fade-in {
   to {
     opacity: 1;
+    top: 8vmin;
   }
 }
 

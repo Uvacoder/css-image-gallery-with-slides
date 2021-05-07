@@ -1,6 +1,6 @@
 # CSS Image Gallery 🖼️
 
-Fully responsive CSS image gallery with navigation
+Fully responsive CSS image gallery without JavaScript
 
 ### Links 🔗
 
